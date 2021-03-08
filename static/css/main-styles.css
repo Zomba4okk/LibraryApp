@@ -1,0 +1,33 @@
+.table-main {
+    border: 1px solid black;
+    border-spacing: 0;
+}
+
+.table-main td, th {
+    min-width: 15vw;
+    border: 1px solid black;
+}
+
+.form-main {
+    padding: 1%;
+
+    border: 2px solid black;
+}
+
+.form-main > p {
+    margin: 1.5vh 0 0.5vh 0;
+
+    text-align: center;
+}
+
+.form-main select, button, input {
+    border: 1px solid black;
+    border-radius: 0;
+
+    background-color: white;
+
+    color: black;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 2.5vh;
+}

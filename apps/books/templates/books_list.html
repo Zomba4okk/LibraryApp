@@ -1,0 +1,49 @@
+{% extends 'menu.html' %}
+
+{% block title %}Books{% endblock %}
+
+{% block content %}
+    <table class="table-main">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>
+                        {{ book.name }}
+                    </td>
+                    <td>
+                        {{ book.author }}
+                    </td>
+                    <td>
+                        {% if book.is_available %}
+                            Book is free.
+                            <a href="{% url 'lend_book' book_id=book.id %}">
+                                Lend it
+                            </a>
+                        {% else %}
+                            <form action="{% url 'return_book' book_id=book.id %}" method="post">
+                                {% csrf_token %}
+                                Book was given to <b>{{ book.current_reader.get_full_name }}</b>.
+                                <a href="" onclick="this.closest('form').submit();return false;">
+                                    Return it
+                                </a>&nbsp;
+                            </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

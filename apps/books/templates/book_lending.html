@@ -1,0 +1,11 @@
+{% extends 'menu.html' %}
+
+{% block title %}Lend book{% endblock %}
+
+{% block content %}
+    <form action="." method="post" class="form-main">
+        {% csrf_token %}
+        Lend book <b>{{ book_name }}</b> to {{ form }}
+        <p><input type="submit" value="Submit"></p>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 60%;
+
+    display: flex;
+
+    padding: 0 1%;
+
+    box-shadow: -3px 3px 2px #3c3c3c;
+
+    border: 2px solid black ;
+}
+
+.content {
+    min-height: 70vh;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2vh;
+
+    font-size: 2.5vh;
+}
